@@ -1,2 +1,3 @@
-string HOLBERTON
+#!/bin/bash
+search 0 HOLBERTON
 !:mime holberton
