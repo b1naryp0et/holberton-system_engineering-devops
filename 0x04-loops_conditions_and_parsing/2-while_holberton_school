@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Displays string 10 times using while loop
 i=0
 while [ $i -le 9 ]
 do
