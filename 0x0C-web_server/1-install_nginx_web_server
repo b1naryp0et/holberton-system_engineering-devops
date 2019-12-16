@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Script which installs nginx web server
+
+# Installation
+sudo apt-get update -y
+sudo apt-get install nginx -y
+
+#Configuration
+sudo service nginx start
+echo "Holberton School" > /var/www/html/index.html
