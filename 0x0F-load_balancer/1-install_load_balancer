@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Script which installs load balancer, HAproxy
+
+sudo apt-get -y update
+sudo apt-get install -y haproxy
+sudo add-apt-repository -y ppa:vbernat/haproxy-1.8
+apt-get update
+apt-get install -y haproxy
+cat >> /etc/haproxy/haproxy.cfg <<EOF
+
+frontend haproxynode
+ bind *:80
+ mode http
+ default_backend backendnodes
+backend backendnodes
+ balance roundrobin
+ server 711-web-01 35.196.6.72:80 check
+ server 711-web-02 35.231.225.64:80 check
+EOF
+
+sudo service haproxy restart
