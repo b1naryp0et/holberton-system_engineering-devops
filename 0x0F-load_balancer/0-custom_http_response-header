@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# hi
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+mkdir -p /var/www/html
+echo "Holberton School for the win!" | sudo tee -a /var/www/html/index.html
+sudo sed -i "25i\ \tadd_header X-Served-By $HOSTNAME;" /etc/nginx/nginx.conf
+sudo service nginx restart
