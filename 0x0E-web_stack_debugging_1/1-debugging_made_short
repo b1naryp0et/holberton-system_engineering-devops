@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Fixes: curl: (7) Failure. Also forces nginx to not run after
+sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
+pkill -o nginx
