@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Script which runs new user as nginx
+sudo pkill -f apache2
+sudo chmod 644 /etc/nginx/nginx.conf
+sudo sed -i "s/#user www-data;/user nginx;/" /etc/nginx/nginx.conf
+sudo sed -i 's|:80 |:8080 |' /etc/nginx/sites-available/default
+sudo -u nginx service nginx start
