@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
-# Script which runs new user as nginx
-sudo pkill -f apache2
-sudo chmod 644 /etc/nginx/nginx.conf
-sudo sed -i "s/#user www-data;/user nginx;/" /etc/nginx/nginx.conf
-sudo sed -i 's|:80 |:8080 |' /etc/nginx/sites-available/default
+# Script which runs nginx as user
+sudo pkill apache2
+sudo pkill nginx
+sudo chown nginx:nginx /etc/nginx/nginx.conf
+sudo chmod  700 /etc/nginx/nginx.conf
+sudo sed -i 's/80/8080/' /etc/nginx/sites-enabled/default
 sudo -u nginx service nginx start
