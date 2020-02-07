@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-""" Function which queries reddit api for number of subscribers """
+""" Module  to query reddit api for number of subscribers """
 
 import requests
-from sys import argv
 
 def number_of_subscribers(subreddit):
+    """ Function which queries reddit api for number of subscribers """
+
 
     url = 'https://reddit.com/r/' + subreddit + '/about/.json'
     usr_agnt = {'User-agent': 'Mozilla/5.0'}
